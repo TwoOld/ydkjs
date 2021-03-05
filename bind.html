@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./bind.js">
+    </script>
+    <script>
+        function foo(something) {
+            console.log(this.a, something);
+            return this.a + something;
+        }
+        var obj = {
+            a: 2
+        };
+
+        var bar = foo.testBind(obj);
+
+        var c = bar(3); // 2 3
+        var b = new bar(3); // 2 3
+        console.log(bar.__proto__); // 5
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test1 {
+            color: red;
+        }
+
+        .test2 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var anotherObject = {
+            a: 2
+        };
+
+        // 创建一个链接到 `anotherObject` 的对象
+        var myObject = Object.create(anotherObject);
+        var testObj = {}
+
+        function fn() {
+            console.log(this);
+        }
+
+        // console.log(myObject.__proto__); // 2
+        // console.log(Object.__proto__); // 2
+        // console.log(Object.prototype.isPrototypeOf(testObj)); // 2
+        // console.log(fn.prototype.__proto__); // 2
+        // console.log(fn.prototype.isPrototypeOf(new fn())); // 2
+        console.log();
+        fn()
+        new fn()
+    </script>
+</body>
+
+</html>
